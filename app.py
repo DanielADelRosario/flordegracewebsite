@@ -22,7 +22,7 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def index():
-    return render_template('homepage.html')
+    return render_template('homePage.html')
 
 @app.route('/about')
 def about():
