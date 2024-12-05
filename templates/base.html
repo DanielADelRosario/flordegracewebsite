@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+  <head>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/fdg_logo.png') }}" type="image/x-icon">
+
+    <title>Flor de Grace</title>
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700%7CZilla+Slab:300,400,500,700,700i%7CGloria+Hallelujah">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fonts.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <div class="preloader">
+
+      <div class="preloader-logo">
+        <a class="brand" href="base.html">
+          <img class="brand-logo-dark" src="{{ url_for('static', filename='images/fdg_logo.png') }}" alt="Logo" width="100" height="100" />
+          <img class="brand-logo-light" src="{{ url_for('static', filename='images/fdg_logo.png') }}" alt="Logo" width="100" height="100" />
+        </a>
+      </div>
+
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRELOADER: ANIMATION WHEN LOADING PAGES -->
+    <div class="page">
+      <!-- Page Header-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <div class="row">
+                    <a class="brand" href="index.html">
+                      <img class="custom-logo-size" src="{{ url_for('static', filename='images/fdg_logo.png') }}"/>
+                    </a>
+                    <span class="heading-5 brand-text" href="#"><strong>Flor de Grace School Inc.</strong></span>
+                  </div>
+                  </div>
+                </div>
+                
+                <div class="rd-navbar-nav-wrap">
+                  <!-- RD Navbar Nav -->
+                  <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active">
+                          <a class="rd-nav-link" href="{{ url_for('index') }}">Home</a>
+                      </li>
+                      <li class="rd-nav-item">
+                          <a class="rd-nav-link" href="{{ url_for('about') }}">About</a>
+                      </li>
+                      <!-- Dropdown Menu -->
+                      <li class="rd-nav-item dropdown">
+                        <a class="rd-nav-link" href="#" id="admissionsDropdown">
+                            Admissions
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url_for('admissions') }}">Online Application</a>
+                            <a class="dropdown-item" href="{{ url_for('requirements') }}">Requirements</a>
+                            <a class="dropdown-item" href="{{ url_for('faqs') }}">FAQs</a>
+                        </div>
+                      </li>
+                      <li class="rd-nav-item">
+                          <a class="rd-nav-link" href="https://testingrepo-ewb9.onrender.com/" target="_blank">ARIMA</a>
+                      </li>
+                  </ul>
+                </div>
+                
+
+              </div>
+            </div>
+          </nav>
+        </div>
+        {% block content %}{% endblock %}
+    </div>  
+    <!-- Footer -->
+      <footer class="section footer-classic bg-gray-950">
+        <div class="footer-classic-main">
+          <div class="container">
+            <div class="row">
+              <!-- Column 1: Flor de Grace -->
+              <div class="col-lg-5 md-10">
+                <h3>Flor de Grace</h3>
+                <p>74 Gold Street, Barangay Commonwealth, Quezon City, Philippines</p>
+              </div>
+              <!-- Column 2: Contact Us -->
+              <div class="col-lg-4 mb-6">
+                <h3>Contact Us</h3>
+                <p><i class="fa fa-envelope" style="font-size: 24px; padding-right: 10px;"></i>Email: info@flordegrace.com</p>
+                <p><i class="fa fa-phone" style="font-size: 24px; padding-right: 10px;"></i> Phone: +63 123 456 7890</p>
+              </div>
+              <!-- Column 3: Social Links -->
+              <div class="col-lg-3 mb-6">
+                <h3>Follow Us</h3>
+                <p>
+                  <a href="https://www.facebook.com/profile.php?id=100050417246864" target="_blank" style="color: rgba(255, 255, 255, 0.888); text-decoration: none;">
+                    <i class="fa fa-facebook-square" style="font-size: 24px; padding-right: 10px;"></i>&nbsp;<span style="color: rgba(255, 255, 255, 0.892);">Facebook</span>
+                  </a>
+                </p>
+                               
+                <a class="button button-sm button-primary" data-wow-delay=".2s" href="https://www.facebook.com/profile.php?id=100050417246864" target="_blank">Apply Now</a>
+              </div>
+            </div> 
+          </div>
+          
+        </div>
+        <div class="footer-classic-aside">
+          <div class="container">
+            <!-- Rights-->
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none"/><a href="#">Terms of Use</a><span> and</span><span>&nbsp;</span><a href="#">Privacy Policy</a>. Powered&nbsp;by&nbsp; ARIMA </a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+
+    <script src="{{url_for('static', filename='js/core.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
