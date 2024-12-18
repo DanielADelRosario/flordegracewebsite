@@ -45,4 +45,4 @@ def resize_image_route(filename):
     return resize_image(filename)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(debug=True)
