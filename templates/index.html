@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Wizard-v6</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- datepicker -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/jquery-ui.min.css')}}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/style2.css')}}"/>
+</head>
+<body>
+	<div class="page-content">
+		<div class="wizard-heading">Student Online Application Form</div>
+		<div class="wizard-v6-content">
+			<div class="wizard-form">
+		        <form class="form-register" id="form-register" action="#" method="post">
+		        	<!-- <div class="tenor-gif-embed" 
+						data-postid="27388554" 
+						data-share-method="host" 
+						data-aspect-ratio="1.50235" 
+						data-width="100%">
+					</div> 
+					<script type="text/javascript" 
+						async src="https://tenor.com/embed.js">
+					</script> -->
+
+					<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<p class="step-icon"><span>1</span></p>
+			            	<span class="step-text">Basic Information</span>
+			            </h2>
+	
+			            <section>
+			                <div class="inner">
+								<hr class="line-bar">
+			                	<div class="form-heading">
+			                		<h3>Personal Info</h3>
+			                		<span>1/4</span>
+			                	</div>
+
+								<div class="text-box">
+									Personal information refers to details that identify you. 
+									Fill out all required fields marked with a red asterisk (*) accurately, 
+									and ensure all information provided is correct before submitting.
+								</div>
+
+								<!-- UPLOAD PHOTO -->
+								<div class="form-parts">
+									Upload Photo
+									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
+								</div>
+
+								<div class="form-row">
+									<div class="col">
+										<div class="col-auto">
+										<span class="label-text">
+											Upload 1 x 1 photo
+											<span style="color: red;">*</span>
+										</span>
+										<span>
+											<div class="row">
+												<div class="col-3">
+													<img src="{{ url_for('static', filename='images/one_by_one.png') }}" alt="Example Image" class="padded-image">
+												</div>
+												<div class="col" style="color: rgb(50, 82, 83);">
+													<p><strong>Photo Upload Guidelines:</strong></p>
+													<ul>
+														<li>Upload a 1x1 square photo (e.g., 300x300 pixels).</li>
+														<li>Accepted file types: JPG, JPEG, PNG. Max size: 2 MB.</li>
+														<li>Ensure the image has a plain background and is high quality.</li>
+														<li>This photo will be used for your profile. Make sure your face is clearly visible.</li>
+													</ul>
+												</div>
+											</div>
+										</span>
+											<input class="form-control" 
+												type="file" 
+												id="formFile"
+												style="padding-bottom: 35px;
+													padding-left: 5px;">
+										</div>
+									</div>
+								</div>
+
+								<div class="form-parts">
+									Student's Profile 
+									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
+								</div>
+
+								<!-- FIRSTNAME -->
+								<div class="form-row">
+									<div class="col-3">
+										<div class="col-auto">
+											<span class="label-text">Firstname
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="first_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="first_name"
+												placeholder="Enter firstname"
+												required>
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="col-auto">
+											<span class="label-text">Middlename</span>
+											<label 
+												for="middle_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="middle_name"
+												placeholder="Enter middlename"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Lastname
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="last_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="last_name"
+												placeholder="Enter lastname"
+												required>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="col-auto">
+											<span class="label-text">Suffix</span>
+											<label 
+												for="suffix" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="suffix"
+												placeholder="Jr./Sr."
+												required>
+										</div>
+									</div>
+								</div>
+
+								<!-- PHONE NUMBER -->
+								<div class="form-row">
+									<div class="col">
+										<div class="col-auto">
+											<span class="label-text">Phone Number
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="contact" 
+												class="form-label">
+											</label>
+											<input 
+												type="tel" 
+												class="form-control" 
+												id="contact"
+												placeholder="0(XXX)-YYY-ZZZZ"
+												required>
+										</div>
+									</div>
+									<div class="col">
+										<div class="col-auto">
+											<span class="label-text">Mobile Number
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="exampleFormControlInput1" 
+												class="form-label">
+											</label>
+											<input 
+												type="contact" 
+												class="form-control" 
+												id="mobile"
+												placeholder="@example.com"
+												required>
+										</div>
+									</div>
+									<div class="col">
+										<div class="col-auto">
+											<span class="label-text">e-Mail
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="exampleFormControlInput1" 
+												class="form-label">
+											</label>
+											<input 
+												type="email" 
+												class="form-control" 
+												id="Last_name"
+												placeholder="@example.com"
+												required>
+										</div>
+									</div>
+								</div>
+
+								<!-- BIRTH INFORMATION -->
+								<div class="form-row">
+									<div class="col-3">
+										<div class="col-auto">
+											<div class="form-group">
+												<label for="dob">Date of Birth 
+													<span style="color: red;">*
+													</span>
+												</label>
+												<input type="date" 
+													class="form-control" 
+													name="dob" id="dob" 
+													placeholder="Select your date of birth" 
+													onchange="calculateAge()" 
+													required>
+											</div>
+										</div>
+                                    </div>
+									<div class="col-3">
+										<div class="col-auto">
+											<div class="form-group">
+												<label for="age">Age</label>
+												<input 
+													type="number" 
+													id="age" 
+													class="form-control" 
+													name="age" 
+													min="0" 
+													max="120" 
+													step="1" 
+													placeholder="Enter your age">
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="col-auto">
+											<span class="label-text">Place of Birth
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="birth_place" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="birth_place"
+												placeholder="Enter Birthplace"
+												required>
+										</div>
+									</div>
+								</div>
+
+								<!-- OTHER INFORMATION -->
+								<div class="form-row">
+									<div class="col-3">
+										<div class="col-auto">
+											<span class="label-text">Nationality
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="birth_place" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="birth_place"
+												placeholder="Enter Nationality"
+												required>
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="col-auto">
+											<span class="label-text">Religion
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="birth_place" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="birth_place"
+												placeholder="Enter Religion"
+												required>
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="col-auto">
+											<span class="label-text">Rank in the Family
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="birth_place" 
+												class="form-label">
+											</label>
+											<input 
+											type="number" 
+											id="age" 
+											class="form-control" 
+											name="age" 
+											min="0" 
+											max="120" 
+											step="1" 
+											placeholder="Enter Rank">
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="col-auto">
+											<div class="form-group">
+												<label class="label-text">Sex
+													<span style="color: red">*</span>
+												</label>
+												<div>
+													<div class="form-check">
+														<input 
+															class="form-check-input" 
+															type="radio" 
+															name="gender" 
+															id="male" 
+															value="Male" 
+															required>
+														<label class="form-check-label" for="male">Male</label>
+													</div>
+													<div class="form-check">
+														<input 
+															class="form-check-input" 
+															type="radio" 
+															name="gender" 
+															id="female" 
+															value="Female" 
+															required>
+														<label class="form-check-label" for="female">Female</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+			            </section>
+
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<p class="step-icon"><span>2</span></p>
+			            	<span class="step-text">Guardian and Address</span>
+			            </h2>
+			            <section>
+							<hr class="line-bar">
+			                <div class="inner">
+			                	<div class="form-heading">
+			                		<h3>Guardian/ Address Information</h3>
+			                		<span>2/4</span>
+			                	</div>
+
+								<div class="text-box">
+									This section tells us about the person/s in-charge of 
+									the student and residential background. Fill out all required fields marked with a red asterisk (*) accurately, 
+									and ensure all information provided is correct before submitting.
+								</div>
+
+
+								<!-- STUDENT ADDRESS -->
+								<div class="form-parts">
+									Student's Address 
+									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
+								</div>
+
+								<!-- REGION/ PROVINCE/ CITY -->
+								<div class="form-row">
+									<div class="col-4">
+										<div class="col-auto">
+											<div class="form-group">
+                                                <label for="region">Region 
+													<span style="color: red;">*</span>
+												</label>
+                                                <select 
+													name="region" 
+													class="form-control form-control-md" 
+													id="region">
+												</select>
+                                                <input type="hidden" 
+													class="form-control form-control-md" 
+													name="region_text" 
+													id="region-text" 
+													required>
+                                            </div>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<div class="form-group">
+												<label for="province">Province 
+													<span style="color: red;">*</span>
+												</label>
+												<select name="province" 
+													class="form-control form-control-md" 
+													id="province">
+												</select>
+												<input type="hidden" 
+													class="form-control form-control-md" 
+													name="province_text" 
+													id="province-text" 
+													required>
+											</div>  
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<div class="form-group">
+												<label for="city">City 
+													<span style="color: red;">*</span>
+												</label>
+												<select name="city" 
+													class="form-control form-control-md" 
+													id="city">
+												</select>
+												<input type="hidden" 
+													class="form-control form-control-md" 
+													name="city_text" id="city-text" 
+													required>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- LOCAL ADDRESS -->
+								<div class="form-row">
+									<div class="col-4">
+										<div class="col-auto">
+                                            <div class="form-group">
+                                                <label for="barangay">Barangay 
+													<span style="color: red;">*</span>
+												</label>
+                                                <select name="barangay" 
+													class="form-control form-control-md" 
+													id="barangay">
+												</select>
+                                                <input type="hidden" 
+													class="form-control form-control-md" 
+													name="barangay_text" 
+													id="barangay-text" 
+													required>
+                                            </div>
+										</div>
+									</div>
+									<div class="col-lg-8">
+										<div class="col-auto">
+                                            <div class="form-group">
+                                                <label for="street">No./ Block/ Street 
+													<span style="color: red;">*</span>
+												</label>
+                                                <input type="text" 
+													class="form-control form-control-md" 
+													name="street_text" 
+													id="street-text"
+													placeholder="Enter House number and street name"
+													required>
+                                            </div>
+										</div>
+									</div>
+								</div>
+
+								<!-- STUDENT ADDRESS -->
+								<div class="form-parts">
+									Parent/Guardian Information 
+									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
+								</div>
+
+								<!-- FATHER'S INFORMATION -->
+								<div class="form-row">
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Father's Name
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="father_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="father_name"
+												placeholder="Enter Father's Name"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Occupation
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="father_occupation" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="father_occupation"
+												placeholder="Enter Occupation"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<div class="form-check" style="margin-top: 38px;">
+												<div class ="row">
+												<div class="col-3">
+												<input 
+													class="form-check-input" 
+													type="radio" 
+													name="vital_status" 
+													id="Living" 
+													value="Living" 
+													required>
+												<label class="form-check-label" 
+													for="Living">Living
+												</label>
+												</div>
+												<div class="col-3" style="margin-left: 30px;">
+												<input 
+													class="form-check-input" 
+													type="radio" 
+													name="vital_status" 
+													id="Deceased" 
+													value="Deceased" 
+													required>
+												<label class="form-check-label" 
+													for="Deceased">Deceased
+												</label>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- MOTHER'S INFORMATION -->
+								<div class="form-row">
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Mother's Name
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="mother_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="mother_name"
+												placeholder="Enter Mother's Name"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Occupation
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="mother_occupation" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="mother_occupation"
+												placeholder="Enter Occupation"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<div class="form-check" style="margin-top: 38px;">
+												<div class ="row">
+												<div class="col-3">
+												<input 
+													class="form-check-input" 
+													type="radio" 
+													name="vital_status" 
+													id="Living" 
+													value="Living" 
+													required>
+												<label class="form-check-label" 
+													for="Living">Living
+												</label>
+												</div>
+												<div class="col-3" style="margin-left: 30px;">
+												<input 
+													class="form-check-input" 
+													type="radio" 
+													name="vital_status" 
+													id="Deceased" 
+													value="Deceased" 
+													required>
+												<label class="form-check-label" 
+													for="Deceased">Deceased
+												</label>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- GUARDUAN'S INFORMATION -->
+								<div class="form-row" style="margin-bottom: 50px;">
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Guardian's Name (Optional)
+											</span>
+											<label 
+												for="mother_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="mother_name"
+												placeholder="Enter Mother's Name"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Occupation
+											</span>
+											<label 
+												for="guardian_occupation" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="guardian_occupation"
+												placeholder="Enter Occupation"
+												required>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<div class="form-check" style="margin-top: 38px;">
+												<div class ="row">
+												<div class="col-3">
+												<input 
+													class="form-check-input" 
+													type="radio" 
+													name="vital_status" 
+													id="Living" 
+													value="Living" 
+													required>
+												<label class="form-check-label" 
+													for="Living">Living
+												</label>
+												</div>
+												<div class="col-3" style="margin-left: 30px;">
+												<input 
+													class="form-check-input" 
+													type="radio" 
+													name="vital_status" 
+													id="Deceased" 
+													value="Deceased" 
+													required>
+												<label class="form-check-label" 
+													for="Deceased">Deceased
+												</label>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+			            </section>
+
+			            <!-- SECTION 3 -->
+			            <h2>
+			            	<p class="step-icon"><span>3</span></p>
+			            	<span class="step-text">Educational Background</span>
+			            </h2>
+
+			            <section>
+			                <div class="inner">
+								<hr class="line-bar">
+			                	<div class="form-heading">
+			                		<h3>Educational Attainment</h3>
+			                		<span>3/4</span>
+			                	</div>
+
+								<div class="text-box">
+									This section tells us the previous school attended. If you are
+									applying for preschool, you skip this step. Otherwise, please 
+									fill out the nesessary forms.
+								</div>
+
+								<div class="form-row">
+									<div class="col">
+										<div class="col">
+											<span class="label-text">School Name
+											</span>
+											<label 
+												for="prev_school_name" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="prev_school_name"
+												placeholder="Enter school attended"
+												required>
+										</div>
+									</div>
+								</div>
+
+								<!-- SCHOOL ADDRESS -->
+								<div class="form-row">
+									<div class="col">
+										<div class="col">
+											<span class="label-text">School Address
+											</span>
+											<label 
+												for="prev_school_addr" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="prev_school_addr"
+												placeholder="Enter school address">
+										</div>
+									</div>
+								</div>
+
+								<!-- GRADE LEVEL/ SCHOOL YEAR/ ADVISER -->
+								<div class="form-row" style="margin-bottom: 50px;">
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Grade Level
+											</span>
+											<label 
+												for="prev_school_addr" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="prev_school_addr"
+												placeholder="Enter school address">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">School Year
+											</span>
+											<label 
+												for="prev_school_addr" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="prev_school_addr"
+												placeholder="Enter school address">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="col-auto">
+											<span class="label-text">Teacher (Adviser)
+											</span>
+											<label 
+												for="prev_school_addr" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="prev_school_addr"
+												placeholder="Enter school address">
+										</div>
+									</div>
+								</div>
+							</div>
+			            </section>
+
+			            <!-- SECTION 3 -->
+			            <h2>
+			            	<p class="step-icon"><span>4</span></p>
+			            	<span class="step-text">Emergency Contact</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="form-heading">
+			                		<h3>Contact Details</h3>
+			                		<span>4/4</span>
+			                	</div>
+
+								<div class="text-box">
+									This section tells us who to contact incase of an emergency.
+									Please fill out the necessary details.
+								</div>
+
+								<div class="form-row">
+									<div class="col">
+										<span class="label-text">Contact Person
+											<span style="color: red;">*</span>
+										</span>
+										<label 
+											for="contact_person" 
+											class="form-label">
+										</label>
+										<input 
+											type="text" 
+											class="form-control" 
+											id="contact_person"
+											placeholder="Enter school address">	
+									</div>
+								</div>
+
+								<div class="form-row">
+									<div class="col">
+										<span class="label-text">Relationship
+											<span style="color: red;">*</span>
+										</span>
+										<label 
+											for="prev_school_addr" 
+											class="form-label">
+										</label>
+										<input 
+											type="text" 
+											class="form-control" 
+											id="prev_school_addr"
+											placeholder="Enter school address">
+									</div>
+								</div>
+
+							</div>
+			            </section>
+						<hr class="line-bar">
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -14466,7 +14466,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 /* Change color on hover */
 .dropdown-item:hover {
-    background-color: #f8f9fa;
+	color: #49AB36;
+    background-color: white;
 }
 
 /* Show the dropdown menu on hover */
@@ -14503,3 +14504,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 		padding-bottom: 80px;
 	}
 }
+
+#admissionsDropdown {
+	display: inline-block; /* Ensures padding works properly */
+	padding: 10px 18px;    /* Adjust as needed for vertical and horizontal padding */
+	text-decoration: none; /* Keeps the link text clean */
+  }
+  
+  #admissionsDropdown:hover, #menuDropdown:hover {
+	color: #49AB36;
+	background-color: white; /* Optional: Add hover effect for better user feedback */
+  }
+
+  

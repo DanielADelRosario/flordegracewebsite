@@ -40,9 +40,13 @@ def requirements():
 def faqs():
     return render_template('faqs.html')
 
+@app.route('/samp')
+def sample():
+    return render_template('index.html')
+
 @app.route('/resize-image/<filename>')
 def resize_image_route(filename):
     return resize_image(filename)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(debug=True)
