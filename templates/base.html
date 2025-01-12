@@ -2,14 +2,17 @@
 <html class="wide wow-animation" lang="en">
 
   <head>
-    <!-- Favicon -->
-    <link rel="icon" href="{{ url_for('static', filename='images/fdg_logo.png') }}" type="image/x-icon">
-
-    <title>Flor de Grace</title>
     <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
+    <!-- Favicon -->
+    <link rel="icon" 
+      href="{{ url_for('static', filename='images/fdg_logo.png') }}" 
+      type="image/x-icon">
+    <title>Flor de Grace</title>
+
+
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700%7CZilla+Slab:300,400,500,700,700i%7CGloria+Hallelujah">
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
@@ -18,26 +21,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
   </head>
-
-  <body>
+  <body>    
     <div class="preloader">
-
       <div class="preloader-logo">
         <a class="brand" href="base.html">
           <img class="brand-logo-dark" src="{{ url_for('static', filename='images/fdg_logo.png') }}" alt="Logo" width="100" height="100" />
           <img class="brand-logo-light" src="{{ url_for('static', filename='images/fdg_logo.png') }}" alt="Logo" width="100" height="100" />
         </a>
       </div>
-
+    
       <div class="preloader-body">
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
     </div>
-
-    <!-- PRELOADER: ANIMATION WHEN LOADING PAGES -->
+    
     <div class="page">
       <!-- Page Header-->
         <div class="rd-navbar-wrap">
@@ -72,7 +73,9 @@
                       <!-- Dropdown Menu -->
                       <li class="rd-nav-item dropdown">
                         <a class="rd-nav-link" href="#" id="admissionsDropdown" style="padding: 10px 5px;">
-                            Admissions <i class="fa fa-chevron-down fa-xs"></i>
+                          Admissions 
+                          <img src="{{ url_for('static', filename='images/wizard_v6_icon.png') }}" 
+                               alt="Dropdown Icon">
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item"  href="{{ url_for('admissions') }}">Online Application</a>
@@ -86,13 +89,13 @@
                   </ul>
                 </div>
                 
-
+  
               </div>
             </div>
           </nav>
         </div>
         {% block content %}{% endblock %}
-    </div>  
+    </div>
     <!-- Footer -->
       <footer class="section footer-classic bg-gray-950">
         <div class="footer-classic-main">
@@ -133,13 +136,23 @@
       </footer>
     </div>
     <div class="snackbars" id="form-output-global"></div>
-
-    <script src="{{url_for('static', filename='js/core.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/script.js')}}"></script>
   </body>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  
+<!-- Load core.min.js and script.js -->
+<script src="{{url_for('static', filename='js/core.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+<!-- Load jQuery first, required for jQuery-based plugins -->
+<!-- <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script> -->
+
+<!-- Load jQuery Steps plugin -->
+<script src="{{ url_for('static', filename='js/jquery.steps.js') }}"></script>
+
+<!-- Load other jQuery-dependent scripts -->
+<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+
+<!-- Finally, load your custom scripts -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 
 </html>
