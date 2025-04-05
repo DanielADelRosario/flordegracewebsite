@@ -161,3 +161,19 @@ function resetDropdown(dropdown, placeholder) {
     dropdown.append(`<option value="" disabled selected>${placeholder}</option>`);
     dropdown.prop('disabled', false);
 }
+
+function calculateAge() {
+    const dobInput = document.getElementById('dob').value;
+    if (dobInput) {
+        const dob = new Date(dobInput);
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+        document.getElementById('age').value = age;
+    } else {
+        document.getElementById('age').value = '';
+    }
+}
