@@ -16,16 +16,7 @@
 		<div class="wizard-v6-content">
 			<div class="wizard-form">
 		        <form class="form-register" id="form-register" action="#" method="post">
-		        	<!-- <div class="tenor-gif-embed" 
-						data-postid="27388554" 
-						data-share-method="host" 
-						data-aspect-ratio="1.50235" 
-						data-width="100%">
-					</div> 
-					<script type="text/javascript" 
-						async src="https://tenor.com/embed.js">
-					</script> -->
-
+		        	
 					<div id="form-total">
 		        		<!-- SECTION 1 -->
 			            <h2>
@@ -90,6 +81,50 @@
 									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
 								</div>
 
+								<!-- SELECT GRADELEVEL -->
+								<div class="form-row">
+									<div class="col-6">
+										<div class="col-auto">
+											<span class="label-text">Grade level
+												<span style="color: red;">*</span>
+												<br>
+												<small class="text-muted">Select the grade-level you are applying for</small>
+											</span>
+											<select 
+												name="gradelevel" 
+												class="form-control form-control-md" 
+												id="grade_level">
+											</select>
+											<input type="hidden" 
+												class="form-control form-control-md" 
+												name="grade_level" 
+												id="grade_level" 
+												required>
+										</div>
+									</div>
+
+									<div class="col-6">
+										<div class="col-auto">
+											<span class="label-text">Are you vaccinated?
+												<span style="color: red;">*</span>
+												<br>
+												<small class="text-muted">Covid-19 vaccine</small>
+											</span>
+											<select 
+												name="vaccine" 
+												class="form-control form-control-md" 
+												id="covid_vaccine">
+                                                <option value="">Select Yes or NO</option>
+                                                <option value="True">Yes</option>
+                                                <option value="False">No</option>
+											</select>
+											<input type="hidden" 
+												name="vaccine" 
+												id="covid_vaccine" 
+												required>
+										</div>
+									</div>
+								</div>	
 								<!-- FIRSTNAME -->
 								<div class="form-row">
 									<div class="col-3">
@@ -162,7 +197,7 @@
 								<div class="form-row">
 									<div class="col">
 										<div class="col-auto">
-											<span class="label-text">Phone Number
+											<span class="label-text">Telephone Number
 												<span style="color: red;">*</span>
 											</span>
 											<label 
@@ -173,7 +208,7 @@
 												type="tel" 
 												class="form-control" 
 												id="contact"
-												placeholder="0(XXX)-YYY-ZZZZ"
+												placeholder="X-YYY-ZZZZ"
 												required>
 										</div>
 									</div>
@@ -190,7 +225,7 @@
 												type="contact" 
 												class="form-control" 
 												id="mobile"
-												placeholder="@example.com"
+												placeholder="0(XXX)-YYY-ZZZZ"
 												required>
 										</div>
 									</div>
@@ -235,15 +270,11 @@
 										<div class="col-auto">
 											<div class="form-group">
 												<label for="age">Age</label>
-												<input 
-													type="number" 
-													id="age" 
+												<input type="number" 
 													class="form-control" 
-													name="age" 
-													min="0" 
-													max="120" 
-													step="1" 
-													placeholder="Enter your age">
+													name="age" id="age" 
+													placeholder="Age will calculate automatically" 
+													readonly>
 											</div>
 										</div>
 									</div>
@@ -382,9 +413,53 @@
 									Student's Address 
 									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
 								</div>
+								
+								<!-- <div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="region">Region <span style="color: red;">*</span></label>
+											<select name="region" class="form-control form-control-md" id="region"></select>
+											<input type="hidden" class="form-control form-control-md" name="region_text" id="region-text" required>
+										</div>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="province">Province <span style="color: red;">*</span></label>
+											<select name="province" class="form-control form-control-md" id="province"></select>
+											<input type="hidden" class="form-control form-control-md" name="province_text" id="province-text" required>
+										</div>    
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="city">City <span style="color: red;">*</span></label>
+												<select name="city" class="form-control form-control-md" id="city"></select>
+												<input type="hidden" class="form-control form-control-md" name="city_text" id="city-text" required>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="barangay">Barangay <span style="color: red;">*</span></label>
+											<select name="barangay" class="form-control form-control-md" id="barangay"></select>
+											<input type="hidden" class="form-control form-control-md" name="barangay_text" id="barangay-text" required>
+										</div>
+									</div>
 
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="street">street <span style="color: red;">*</span></label>
+											<input type="text" class="form-control form-control-md" name="street_text" id="street-text">
+										</div>
+									</div>
+								</div> -->
+								
 								<!-- REGION/ PROVINCE/ CITY -->
 								<div class="form-row">
+
+									<!-- REGION DROPDOWN -->
+
 									<div class="col-4">
 										<div class="col-auto">
 											<div class="form-group">
@@ -392,28 +467,35 @@
 													<span style="color: red;">*</span>
 												</label>
                                                 <select 
-													name="region" 
 													class="form-control form-control-md" 
-													id="region">
+													name="region"
+													id="region"
+													required>
+													<option value="" disabled selected>Choose Region</option>
 												</select>
                                                 <input type="hidden" 
-													class="form-control form-control-md" 
 													name="region_text" 
-													id="region-text" 
+													id="region_text" 
 													required>
                                             </div>
 										</div>
 									</div>
+
+									<!-- PROVINCE DROPDOWN -->
+
 									<div class="col-4">
 										<div class="col-auto">
 											<div class="form-group">
 												<label for="province">Province 
 													<span style="color: red;">*</span>
 												</label>
-												<select name="province" 
+												<select 
 													class="form-control form-control-md" 
-													id="province">
-												</select>
+													name="province"
+													id="province" 
+													aria-required="true" 
+													required>
+												</select>											
 												<input type="hidden" 
 													class="form-control form-control-md" 
 													name="province_text" 
@@ -422,6 +504,9 @@
 											</div>  
 										</div>
 									</div>
+
+									<!-- CITY DROPDOWN -->
+
 									<div class="col-4">
 										<div class="col-auto">
 											<div class="form-group">
@@ -443,6 +528,9 @@
 
 								<!-- LOCAL ADDRESS -->
 								<div class="form-row">
+
+									<!-- BARANGAY -->
+
 									<div class="col-4">
 										<div class="col-auto">
                                             <div class="form-group">
@@ -461,6 +549,9 @@
                                             </div>
 										</div>
 									</div>
+
+									<!-- LOCATION -->
+
 									<div class="col-lg-8">
 										<div class="col-auto">
                                             <div class="form-group">
@@ -478,7 +569,7 @@
 									</div>
 								</div>
 
-								<!-- STUDENT ADDRESS -->
+								<!-- PARENT INFORMATION -->
 								<div class="form-parts">
 									Parent/Guardian Information 
 									<hr style="flex-grow: 1; border: 1px solid #8d8d8d; margin: 0;">
@@ -822,37 +913,94 @@
 									Please fill out the necessary details.
 								</div>
 
+								<!-- CONTACT PERSON -->
 								<div class="form-row">
-									<div class="col">
-										<span class="label-text">Contact Person
-											<span style="color: red;">*</span>
-										</span>
-										<label 
-											for="contact_person" 
-											class="form-label">
-										</label>
-										<input 
-											type="text" 
-											class="form-control" 
-											id="contact_person"
-											placeholder="Enter school address">	
+									<div class="col-lg-12">
+										<div class="col-auto">
+											<span class="label-text">Contact Person
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="contact_person" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="contact_person"
+												placeholder="Enter school address">	
+										</div>
 									</div>
 								</div>
 
+								<!-- RELATIONSHIP WITH THE PERSON -->
 								<div class="form-row">
+									<div class="col-lg-12">
+										<div class="col-auto">
+											<span class="label-text">Relationship
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="prev_school_addr" 
+												class="form-label">
+											</label>
+											<input 
+												type="text" 
+												class="form-control" 
+												id="prev_school_addr"
+												placeholder="Enter school address">
+										</div>
+									</div>
+								</div>
+
+								<!-- EMERGENCY CONTACT NUMBER -->
+								<div class="form-row" style="margin-bottom: 50px;">
 									<div class="col">
-										<span class="label-text">Relationship
-											<span style="color: red;">*</span>
-										</span>
-										<label 
-											for="prev_school_addr" 
-											class="form-label">
-										</label>
-										<input 
-											type="text" 
-											class="form-control" 
-											id="prev_school_addr"
-											placeholder="Enter school address">
+										<div class="col-auto">
+											<span class="label-text">Mobile Number
+												<span style="color: red;">*</span>
+											</span>
+											<input 
+												type="tel" 
+												class="form-control" 
+												id="mobile_contact"
+												placeholder="0(XXX)-YYY-ZZZZ"
+												required>
+										</div>
+									</div>
+									<div class="col">
+										<div class="col-auto">
+											<span class="label-text">Telephone Number
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="exampleFormControlInput1" 
+												class="form-label">
+											</label>
+											<input 
+												type="contact" 
+												class="form-control" 
+												id="telephone_contact"
+												placeholder="X-YYY-ZZZZ"
+												required>
+										</div>
+									</div>
+									<div class="col">
+										<div class="col-auto">
+											<span class="label-text">e-Mail
+												<span style="color: red;">*</span>
+											</span>
+											<label 
+												for="exampleFormControlInput1" 
+												class="form-label">
+											</label>
+											<input 
+												type="email" 
+												class="form-control" 
+												id="email"
+												placeholder="@example.com"
+												required>
+										</div>
 									</div>
 								</div>
 
@@ -865,4 +1013,8 @@
 		</div>
 	</div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/address_selector.js') }}"></script>
+
 </html>
