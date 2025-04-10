@@ -194,19 +194,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Delete buttons
+        // Delete buttons with SweetAlert
         document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const entryElement = e.target.closest('.list-group-item');
                 const entryId = entryElement.dataset.id;
+                const entryTitle = entryElement.querySelector('h5').textContent;
                 const section = Object.keys(sectionData).find(section => 
                     sectionData[section].some(entry => entry.id === entryId)
                 );
                 
-                if (section) {
-                    sectionData[section] = sectionData[section].filter(entry => entry.id !== entryId);
-                    renderAllSections();
-                }
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: `You're about to delete "${entryTitle}"`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        sectionData[section] = sectionData[section].filter(entry => entry.id !== entryId);
+                        renderAllSections();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your entry has been deleted.',
+                            'success'
+                        );
+                    }
+                });
             });
         });
 
@@ -228,7 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         richTextContainer.innerHTML = entry.description;
                         elements.modalPublishedDate.value = entry.date;
                         
-                        // Change button text to "Update"
                         elements.modalSaveBtn.textContent = 'Update';
                         elements.modal.show();
                     }
@@ -237,38 +253,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Save/Update entry
+    // Save/Update entry with SweetAlert
     elements.modalSaveBtn.addEventListener('click', () => {
         const title = elements.modalTitle.value.trim();
         const description = richTextContainer.innerHTML;
         const date = elements.modalPublishedDate.value.trim() || new Date().toLocaleDateString();
         
         if (!title) {
-            alert('Please enter a title');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please enter a title!',
+                confirmButtonColor: '#198754'
+            });
             return;
         }
 
-        if (currentEditingId) {
-            // Update existing entry
-            sectionData[currentSection] = sectionData[currentSection].map(entry => 
-                entry.id === currentEditingId 
-                    ? { ...entry, title, description, date }
-                    : entry
-            );
-        } else {
-            // Create new entry
-            const newEntry = {
-                id: Date.now().toString(),
-                title,
-                description,
-                date
-            };
-            sectionData[currentSection].unshift(newEntry);
-        }
-        
-        renderAllSections();
-        resetModal();
-        elements.modal.hide();
+        const action = currentEditingId ? 'updated' : 'saved';
+        const actionText = currentEditingId ? 'Update' : 'Save';
+
+        Swal.fire({
+            title: `${actionText} Entry?`,
+            html: `You're about to ${action}: <strong>"${title}"</strong>`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: `Yes, ${actionText} it!`,
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                if (currentEditingId) {
+                    // Update existing entry
+                    sectionData[currentSection] = sectionData[currentSection].map(entry => 
+                        entry.id === currentEditingId 
+                            ? { ...entry, title, description, date }
+                            : entry
+                    );
+                } else {
+                    // Create new entry
+                    const newEntry = {
+                        id: Date.now().toString(),
+                        title,
+                        description,
+                        date
+                    };
+                    sectionData[currentSection].unshift(newEntry);
+                }
+                
+                renderAllSections();
+                resetModal();
+                elements.modal.hide();
+                
+                Swal.fire({
+                    title: `${actionText}!`,
+                    text: `Your entry has been ${action} successfully.`,
+                    icon: 'success',
+                    confirmButtonColor: '#198754',
+                    timer: 1500
+                });
+            }
+        });
     });
 
     // Reset modal
@@ -277,8 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
         richTextContainer.innerHTML = '';
         elements.modalPublishedDate.value = '';
         currentEditingId = null;
-        
-        // Reset button text to "Save"
+        elements.alignBtn.innerHTML = alignmentIcons.left;
+        currentAlign = 'left';
         elements.modalSaveBtn.textContent = 'Save';
     }
 
