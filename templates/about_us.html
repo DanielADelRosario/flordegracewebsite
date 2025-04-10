@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about_us.css') }}">
+</head>
+
+<div class="about-container">
+    <h1 style="text-align: left; font-size: 36px; font-weight: bold; margin-bottom: 0;">About Us</h1>
+    <hr style="width: 1110px; height: 3px; background-color: #838383; border: none; margin: 8px auto 20px auto;">
+
+    <div class="about-content">
+        <div class="about-image" style="margin-top: 20px;">
+            <div class="image-box">
+                <img src="{{ url_for('static', filename='images/about_img1.jpg') }}" alt="About Us Photo">
+            </div>
+            <p class="photo-label">Sample 1</p>
+        </div>
+        <!-- Title and content -->
+        <div class="about-text">
+            <h2 class="school-title" style="margin-top: 20px;">Flor de Grace School, Inc.</h2>
+            <p class="school-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum. <br> <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+                
+            </p>
+        </div>
+    </div>
+        <!-- Vision and Mission content -->
+    <div class="vision-container" style="margin-top: 50px;">
+        <h1 style="text-align: left; font-size: 36px; font-weight: bold; margin-bottom: 0;">Vision and Mission</h1>
+        <hr style="width: 1110px; height: 3px; background-color: #838383; border: none; margin: 8px auto 20px auto;">
+    
+        <div class="vision-content">
+            <div class="vision-image" style="margin-top: 20px;">
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='images/about_img1.jpg') }}" alt="Vision and Mission Photo">
+                </div>
+                <p class="photo-label">Sample 2</p>
+            </div>
+    
+            <div class="vision-text">
+                <h2 class="section-title" style="margin-top: 20px;">Flor de Grace School, Inc.</h2>
+                <h3 class="sub-title">Vision</h3>
+                <p class="section-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum. 
+                </p>
+    
+                <h3 class="sub-title">Mission</h3>
+                <p class="section-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

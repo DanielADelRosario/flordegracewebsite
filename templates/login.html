@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Flor de Grace School</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</head>
+<body>
+    
+<!-- Full Background Slider (outside of container) -->
+<div class="background-slider">
+    <img src="{{ url_for('static', filename='images/background_1.jpg') }}" alt="background_1" class="background-img active"
+    style="width: 100%; height: auto; object-fit: cover; transform: scale(1); filter:brightness(1);">
+    <img src="{{ url_for('static', filename='images/background_2.jpg') }}" alt="background_2" class="background-img">
+    <img src="{{ url_for('static', filename='images/background_3.jpg') }}" alt="background_3" class="background-img">
+    <img src="{{ url_for('static', filename='images/background_4.jpg') }}" alt="background_4" class="background-img">
+    <img src="{{ url_for('static', filename='images/background_5.jpg') }}" 
+    alt="background_5" 
+    class="background-img" 
+    style="width: 100%; height: auto; object-fit: cover; transform: scale(1); filter:brightness(0.9);">
+</div>
+<!-- Main Content Container -->
+<div class="container">
+   
+        <div class="left-section"></div>
+             <!-- Left Section (can be empty if not needed) -->
+    
+        <!-- Right Section - Admin Login Form -->
+        <div class="right-section">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/school_logo.png') }}" alt="School Logo">
+            </div>
+            <div class="login-box">
+                <h2>Flor de Grace School, Inc.</h2>
+                <h3 class="subtitle">SCHOOL MANAGEMENT SYSTEM</h3>
+                <form>
+                    <label for="admin-email">Email</label>
+                    <input type="email" id="admin-email" placeholder="Enter Admin Email" required>
+                    
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" placeholder="Enter Admin Password" required>
+                  <!-- Log in Button-->
+                    <a href="{{ url_for('admin_page') }}"> <button type="button">Login as Admin</button></a>
+                </form>
+                <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

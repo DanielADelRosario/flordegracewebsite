@@ -28,6 +28,18 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
+
+@app.route('/featured_events')
+def featured_events():
+    return render_template('featured_events.html')
+
+@app.route('/news_announcements')
+def news_announcements():
+    return render_template('news_announcements.html')
+
 @app.route('/admissions')
 def admissions():
     return render_template('admissions.html')
@@ -39,6 +51,18 @@ def requirements():
 @app.route('/faqs')
 def faqs():
     return render_template('faqs.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/forgot_password')
+def forgot_password():
+    return render_template('forgot_password.html')
+
+@app.route('/admin_page')
+def admin_page():
+    return render_template('admin_page.html')
 
 @app.route('/samp')
 def sample():
