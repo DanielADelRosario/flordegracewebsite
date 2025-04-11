@@ -1,0 +1,366 @@
+/* Ensure full-width layout */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Styles */
+.admin-header {
+    width: 100%;
+    background-color: #2eb945;
+    padding: 15px 20px;
+    border-bottom: 2px solid #c8e6c9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box; 
+    height: 100px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.school-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .school-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+}
+
+/* Navbar Tabs */
+.navbar { padding: 0; }
+.navbar-nav { position: relative; }
+.nav-item { position: relative; }
+
+.nav-link {
+  color: #495057; font-weight: 500; background: transparent;
+  padding: 0.75rem 1rem !important; position: relative;
+  border: none; transition: all 0.3s ease;
+}
+.nav-link:hover, .nav-link.active, 
+.nav-link:hover .bi, .nav-link.active .bi { color: #198754; }
+.nav-link.active { font-weight: 600; }
+
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 0; height: 3px;
+  background-color: #198754;  transition: all 0.3s ease;
+}   
+.nav-link.active::after { width: 100%; }
+
+.nav-link .bi {
+  font-size: 1.1rem; color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navbar-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 0.5rem !important; }
+  .nav-link { padding: 0.5rem 0.75rem !important; font-size: 0.9rem; }
+  .nav-link::after { height: 2px; }
+}
+@media (max-width: 768px) {
+  .navbar-nav { gap: 0.25rem !important; }
+  .nav-link { padding: 0.4rem 0.6rem !important; }
+  .nav-link .bi { font-size: 1rem; margin-right: 0.25rem !important; }
+}
+@media (max-width: 576px) {
+  .nav-link { font-size: 0.8rem; }
+  .nav-link .bi { display: none; }
+  .nav-link::after { height: 1.5px; }
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+/* inner container */
+.tab-container {
+    background-color: #f7f7f7;
+    padding: 25px;
+    margin: 25px auto; 
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.37);
+    max-width: 65%;
+}
+
+/* About Section - Compact CSS */
+#about .card,
+#announcements .card,
+#events .card,
+#faqs .card { 
+  border-radius: 10px; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important; 
+  border-radius: 11px;
+  border: 1px solid #c5c5c5;
+}
+#about .card-header,
+#announcements .card-header,
+#events .card-header,
+#faqs .card-header { 
+  font-weight: 600; 
+  border-radius: 11px 11px 0 0;
+}
+#about .list-group-item:hover,
+#announcements .list-group-item:hover,
+#events .list-group-item:hover,
+#faqs .list-group-item:hover { 
+  background: #f8f9fa; 
+}
+#about .btn-outline-primary,
+#announcements .btn-outline-primary,
+#events .btn-outline-primary,
+#faqs .btn-outline-primary { 
+  border-color: #6c63ff; color: #6c63ff; 
+}
+#about .btn-outline-primary:hover,
+#announcements .btn-outline-primary:hover,
+#events .btn-outline-primary:hover,
+#faqs .btn-outline-primary:hover { 
+  background: #6c63ff; color: #fff; 
+}
+#about .btn-outline-danger,
+#announcements .btn-outline-danger,
+#events .btn-outline-danger,
+#faqs .btn-outline-danger { 
+  border-color: #ff6b6b; color: #ff6b6b; 
+}
+#about .btn-outline-danger:hover,
+#announcements .btn-outline-danger:hover,
+#events .btn-outline-danger:hover,
+#faqs .btn-outline-danger:hover { 
+  background: #ff6b6b; color: #fff; 
+}
+#about .btn-success,
+#announcements .btn-success,
+#events .btn-success,
+#faqs .btn-success { 
+  background-color: #198754; 
+}
+#about .btn-success:hover,
+#announcements .btn-success:hover,
+#events .btn-success:hover,
+#faqs .btn-success:hover { 
+  background: #146640; 
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #about .list-group-item,
+  #announcements .list-group-item,
+  #events .list-group-item,
+  #faqs .list-group-item { 
+      flex-direction: column; align-items: flex-start !important; 
+  }
+  #about .list-group-item div:last-child,
+  #announcements .list-group-item div:last-child,
+  #events .list-group-item div:last-child,
+  #faqs .list-group-item div:last-child { 
+      margin-top: 10px; align-self: flex-end; 
+  }
+}
+
+
+
+/* General Modal Styling */
+#addEntryModal .modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: #fff;
+  }
+  /* Modal Size Adjustments */
+#addEntryModal .modal-dialog {
+  max-width: 580px;
+  margin: 20px auto; 
+}
+
+#addEntryModal .modal-content {
+  max-height: 90vh; 
+  overflow: visible; 
+}
+
+#addEntryModal .modal-body {
+  padding: 1.25rem;
+  overflow-y: visible; 
+  height: 73vh;
+}
+
+  /* Header Styling */
+  #addEntryModal .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  
+  #addEntryModal .modal-title {
+    font-weight: 600;
+    color: #343a40;
+  }
+  
+  #addEntryModal .btn-close {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  #addEntryModal .btn-close:hover {
+    filter: none;
+  }
+  
+  /* Body Inputs */
+  #addEntryModal .modal-body input[type="text"],
+  #addEntryModal .modal-body input[type="file"],
+  #addEntryModal .modal-body textarea {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    padding: 0.6rem 0.75rem;
+    transition: border-color 0.2s;
+  }
+  #addEntryModal .modal-body input:focus,
+  #addEntryModal .modal-body textarea:focus {
+    outline: none;
+    border-color: #66bb6a; 
+    box-shadow: 0 0 8px rgba(102, 187, 106, 0.5); 
+  }
+  
+  /* Toolbar Buttons */
+  #addEntryModal .toolbar {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  #addEntryModal .toolbar .btn {
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+  }
+  
+  #addEntryModal .toolbar .btn:hover {
+    background-color: #e2e6ea;
+    color: #0d6efd;
+    border-color: #adb5bd;
+  }
+  
+  /* Footer Buttons */
+  #addEntryModal .modal-footer {
+    min-height: 20px;
+    height: auto;   
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  
+  #addEntryModal .btn-primary {
+    background-color: #198754; 
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    border: none;
+  }
+  
+  #addEntryModal .btn-primary:hover {
+    background: #146640; 
+  }
+  
+  #addEntryModal .btn-secondary {
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    border: none;
+  }
+  
+  /* Rich Text Editor Styles */
+.rich-text-editor {
+    min-height: 120px;
+    padding: 10px;
+    border: 1px solid #cedad1;
+    border-radius: 0.5rem;
+    outline: none;
+    background-color: white;
+}
+
+.rich-text-editor:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 8px rgba(102, 187, 106, 0.5);
+}
+
+/* Style the formatted content inside the editor */
+.rich-text-editor b, .rich-text-editor strong {
+    font-weight: bold;
+}
+
+.rich-text-editor i, .rich-text-editor em {
+    font-style: italic;
+}
+
+/* Alignment classes */
+.rich-text-editor[style*="text-align: left"],
+.rich-text-editor .align-left {
+    text-align: left;
+}
+
+.rich-text-editor[style*="text-align: center"],
+.rich-text-editor .align-center {
+    text-align: center;
+}
+
+.rich-text-editor[style*="text-align: right"],
+.rich-text-editor .align-right {
+    text-align: right;
+}
+
+.rich-text-editor[style*="text-align: justify"],
+.rich-text-editor .align-justify {
+    text-align: justify;
+}
+
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

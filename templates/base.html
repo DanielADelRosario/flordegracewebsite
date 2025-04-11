@@ -67,9 +67,19 @@
                       <li class="rd-nav-item active">
                           <a class="rd-nav-link" href="{{ url_for('index') }}">Home</a>
                       </li>
-                      <li class="rd-nav-item">
-                          <a class="rd-nav-link" href="{{ url_for('about') }}">About</a>
-                      </li>
+     <!-- About Dropdown Menu -->
+     <li class="rd-nav-item dropdown">
+      <a class="rd-nav-link" href="#" id="admissionsDropdown" style="padding: 10px 5px;">
+        About 
+        <img src="{{ url_for('static', filename='images/wizard_v6_icon.png') }}" 
+             alt="Dropdown Icon">
+      </a>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{ url_for('about_us') }}">About Us</a>
+          <a class="dropdown-item" href="{{ url_for('featured_events') }}">Featured Events</a>
+          <a class="dropdown-item" href="{{ url_for('news_announcements') }}">News and Announcements</a>
+      </div>
+    </li>
                       <!-- Dropdown Menu -->
                       <li class="rd-nav-item dropdown">
                         <a class="rd-nav-link" href="#" id="admissionsDropdown" style="padding: 10px 5px;">
